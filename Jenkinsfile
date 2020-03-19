@@ -53,7 +53,7 @@ pipeline {
 				timeout(time:5,unit:'MINUTES'){
 					script{
 						// println("获取代码")
-						tools.printMsg("获取代码",red)
+						tools.PrintMes("获取代码",red)
 					}
 				}
 			}
@@ -63,7 +63,7 @@ pipeline {
 				timeout(time:20,unit:'MINUTES'){
 					script{
 						// println("代码打包")
-						tools.printMsg("代码打包",blue)
+						tools.PrintMes("代码打包",blue)
 					}
 				}
 			}
@@ -73,7 +73,7 @@ pipeline {
 				timeout(time:30,unit:'MINUTES'){
 					script{
 						// println("代码扫描")
-						tools.printMsg("代码扫描",green)
+						tools.PrintMes("代码扫描",green)
 					}
 				}
 			}
