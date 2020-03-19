@@ -1,4 +1,4 @@
-String workspace "/opt/jenkins/workspace"
+//String workspace "/opt/jenkins/workspace"
 // 配置共享库
 @Library('shareLib')
 
@@ -30,9 +30,9 @@ pipeline {
 	}
 
 	// 获取自动安装或者手动安装的环境变量
-	tools {
-		maven "M3"
-	}
+	//tools {
+	//	maven "M3"
+	//}
 
 
 	// 指定运行的选项（可选）
