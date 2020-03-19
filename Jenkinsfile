@@ -52,7 +52,8 @@ pipeline {
 				// 设置步骤超时时间
 				timeout(time:5,unit:'MINUTES'){
 					script{
-						println("获取代码")
+						// println("获取代码")
+						tools.printMsg("获取代码",red)
 					}
 				}
 			}
@@ -61,7 +62,8 @@ pipeline {
 			steps{
 				timeout(time:20,unit:'MINUTES'){
 					script{
-						println("代码打包")
+						// println("代码打包")
+						tools.printMsg("代码打包",blue)
 					}
 				}
 			}
@@ -70,8 +72,8 @@ pipeline {
 			steps{
 				timeout(time:30,unit:'MINUTES'){
 					script{
-						println("代码扫描")
-						tools.printMsg("共享库测试")
+						// println("代码扫描")
+						tools.printMsg("代码扫描",green)
 					}
 				}
 			}
