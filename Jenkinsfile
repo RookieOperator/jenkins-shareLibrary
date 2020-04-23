@@ -69,7 +69,7 @@ pipeline {
 					script{
 						// println("代码打包")
 						tools.PrintMes("代码打包",'blue')
-						build.Build("${buildType}","${buildShell}")
+						build.Build(buildType,buildShell)
 					}
 				}
 			}
