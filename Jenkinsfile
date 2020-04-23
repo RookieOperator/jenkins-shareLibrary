@@ -4,6 +4,7 @@
 
 // 引用共享库中的方法
 def tools = new org.devops.tools()
+def build = new org.devops.build()
 
 // Pipeline
 pipeline {
