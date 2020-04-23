@@ -10,6 +10,15 @@ def Build(buildType,buildShell){
   // 获取buildHome
   buildHome = tool buildTools[buildType]
   
-  // 执行打包
-  sh "${buildHome}/bin/${buildType} ${buildShell}"
+  // 判断是否为NPM，因为NPM需要加载一次环境变量
+  if ("${buildType}"=="npm"){
+      sh """
+          export NPM_HOME=${buildHome}
+          export PATH=\$PATH:\$NPM_HOME/bin
+          ${buildHome}/bin/${buildType} ${buildShell}
+      """
+  }else{
+    // 执行打包
+    sh "${buildHome}/bin/${buildType} ${buildShell}"
+  }
 }
