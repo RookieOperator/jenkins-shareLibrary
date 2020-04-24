@@ -7,8 +7,8 @@ def tools = new org.devops.tools()
 def build = new org.devops.build()
 
 // 定义变量
-String buildType = ${env.buildType}
-String buildShell = ${env.buildShell}
+String buildType = env.buildType
+String buildShell = env.buildShell
 
 // Pipeline
 pipeline {
