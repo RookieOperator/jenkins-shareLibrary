@@ -5,10 +5,12 @@
 // 引用共享库中的方法
 def tools = new org.devops.tools()
 def build = new org.devops.build()
+def deploy = new org.devops.deploy()
 
 // 定义变量
 String buildType = env.buildType
 String buildShell = env.buildShell
+String deployHosts = env.deployHosts
 
 // Pipeline
 pipeline {
@@ -69,7 +71,7 @@ pipeline {
 					script{
 						// println("代码打包")
 						tools.PrintMes("代码打包",'blue')
-						build.Build(buildType,buildShell)
+						// build.Build(buildType,buildShell)
 					}
 				}
 			}
@@ -97,6 +99,7 @@ pipeline {
 			script{
 				println("success:只有构建成功才会执行")
 				currentBuild.description = "\n构建成功！"
+				deploy.AnsibleDeploy("${deployHosts}","-m ping")
 			}
 		}
 		failure {
