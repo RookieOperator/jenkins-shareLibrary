@@ -1,6 +1,6 @@
 //String workspace "/opt/jenkins/workspace"
 // 配置共享库
-@Library('shareLib')
+@Library('myLib')
 
 // 引用共享库中的方法
 def tools = new org.devops.tools()
